@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="coorp">
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card >
+    <ion-card-content>
+      <ion-slides pager >
+        <ion-slide *ngFor="let img of contenido?.images" >
+          <img [src]="img.src" style="width:100%;" (click)=openImagePage(img.index)>
+        </ion-slide>
+      </ion-slides>
+      <ion-card-title>
+        {{contenido?.title}}
+      </ion-card-title>
+
+      <div *ngIf="!textoContenido" class="contenidoTexto intro" [innerHTML] = "'<p>' + contenido?.text + '</p>'"></div>
+      <div *ngIf="textoContenido" class="contenidoTexto" [innerHTML] = "'<p>' + contenido?.text + '</p>'"></div>
+     
+      <ion-grid *ngIf=" contenido?.coords.length >0 ">
+        <ion-row> 
+          <ion-col width-50>
+            <ion-list>
+              <ion-item>
+                <button ion-button  full color="coorp" [disabled]="contenido?.text=='' || contenido?.text==null" (click)="openVerMasContenidoPage()"><label class="labelPadding">Ver más</label></button>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+          <ion-col width-50>
+            <ion-list>
+              <ion-item>
+                <button ion-button  full color="coorp" (click)="openMapaContenidoPage()"><label class="labelPadding">Mapa</label></button>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid *ngIf=" contenido?.coords.length == 0 ">
+        <ion-row> 
+          <ion-col width-100>
+            <ion-list>
+              <ion-item>
+                <button ion-button  full color="coorp" [disabled]="contenido?.text=='' || contenido?.text==null" (click)="openVerMasContenidoPage()"><label class="labelPadding">Ver más</label></button>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

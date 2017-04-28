@@ -1,0 +1,23 @@
+page-alojamiento {
+  .grid, .col{
+    padding:0px;
+  }
+  a{
+    text-decoration: none;
+    color:#000;
+  }
+  .label_establecimiento{
+    font-size: 0.8em;
+  }
+  .h2_nombre_establecimiento{
+    font-size:1.2em;
+  }
+
+  .contenidoTexto p{
+     text-align: justify;
+  }
+  .intro{
+    height:100px;
+    overflow: hidden;
+  }
+}

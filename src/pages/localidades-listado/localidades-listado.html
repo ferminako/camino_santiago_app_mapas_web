@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="coorp">
+    <ion-title>{{getComerDormirString()}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let localidad of localidades" (click)="openPageLocalidad(localidad)" text-wrap>
+      <ion-thumbnail item-left>
+        <img *ngIf="localidad.imagen!=''" src="{{localidad.imagen}}">
+        <img *ngIf="localidad.imagen==''" src="assets/images/no_foto.png">
+      </ion-thumbnail>
+      <h2>{{localidad.localidad}}</h2>
+      <p>{{localidad.provincia}}</p>
+      <ion-badge item-right *ngIf="localidad.distancia!=0"><ion-icon name="walk"></ion-icon> {{localidad.distancia}} km </ion-badge>
+      <ion-badge item-right *ngIf="localidad.distancia==0"><ion-icon name="flag"></ion-icon> </ion-badge>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

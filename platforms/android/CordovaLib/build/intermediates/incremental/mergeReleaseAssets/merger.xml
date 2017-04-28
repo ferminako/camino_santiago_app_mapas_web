@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/fermin/lampstack-5.5.34-0/apache2/htdocs/apps_ionic2/caminosantiago/platforms/android/CordovaLib/assets"/><source path="/home/fermin/lampstack-5.5.34-0/apache2/htdocs/apps_ionic2/caminosantiago/platforms/android/CordovaLib/build/generated/assets/shaders/release"/></dataSet><dataSet config="release"><source path="/home/fermin/lampstack-5.5.34-0/apache2/htdocs/apps_ionic2/caminosantiago/platforms/android/CordovaLib/src/release/assets"/></dataSet></merger>

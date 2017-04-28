@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-toolbar color="coorp">
+     <ion-buttons end>
+      <button (click)="close()" ion-button icon-only>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-list-header>
+      Busca alojamientos
+    </ion-list-header>
+    <ion-item>
+      <ion-searchbar
+        [(ngModel)]="filtroAloTexto"
+        [placeholder]="Buscar"
+      >
+      </ion-searchbar>
+     <!-- <ion-searchbar
+        [(ngModel)]="establecimientoSearch"
+        [showCancelButton]="shouldShowCancel"
+        [placeholder]="Buscar"
+        (ionInput)="onInput($event)"
+        (ionCancel)="onCancel($event)">
+      </ion-searchbar>-->
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Apartahotel</ion-label>
+      <ion-checkbox [(ngModel)]="listadoTipos.apartahotel"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Apto.Turístico</ion-label>
+      <ion-checkbox [(ngModel)]="listadoTipos.apartamento_turistico"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Camping</ion-label>
+      <ion-checkbox [(ngModel)]="listadoTipos.camping"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Casa Rural</ion-label>
+      <ion-checkbox [(ngModel)]="listadoTipos.casa_rural"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Hostal</ion-label>
+      <ion-checkbox [(ngModel)]="listadoTipos.hostal"></ion-checkbox>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Hotel</ion-label>
+      <ion-checkbox [(ngModel)]="listadoTipos.hotel"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Hotel Rural</ion-label>
+      <ion-checkbox [(ngModel)]="listadoTipos.hotel_rural"></ion-checkbox>
+    </ion-item>
+
+     <ion-item>
+      <ion-label>Pensión</ion-label>
+      <ion-checkbox [(ngModel)]="listadoTipos.pension"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Posada</ion-label>
+      <ion-checkbox [(ngModel)]="listadoTipos.posada"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-grid>
+        <ion-row> 
+          <ion-col width-50>
+           
+              <ion-item>
+                <button ion-button  block color="coorp" (click)="desmarcarFiltrosTipo()"><label class="labelPadding">Desmarcar todos</label></button>
+              </ion-item>
+           
+          </ion-col>
+          <ion-col width-50>
+           
+              <ion-item>
+                <button ion-button  block color="coorp" (click)="marcarFiltrosTipo()"><label class="labelPadding">Marcar todos</label></button>
+              </ion-item>
+            
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+  </ion-list>
+
+ <ion-list>
+    
+    <ion-list-header>
+        <ion-label> Distancia</ion-label>
+        <ion-badge item-right>{{filtroAloDistancia}} Km</ion-badge>
+    </ion-list-header>
+      
+    <ion-item>
+      <ion-range min="0" max="100" [(ngModel)]="filtroAloDistancia" color="coorp">
+        <ion-label range-left>0</ion-label>
+        <ion-label range-right>100</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-list> 
+  <button ion-button color="coorp" block (click)="filtrar()">Filtrar</button><br>
+  <button ion-button color="danger" block (click)="limpiarFiltros()">Limpiar</button>
+
+</ion-content>

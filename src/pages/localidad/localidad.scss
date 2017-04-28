@@ -1,0 +1,9 @@
+page-localidad {
+  .grid, .col{
+    padding:0px;
+  }
+  /*Apaño para sacar boton back en el ion-nav*/
+  .force-back-button .back-button {
+    display: inline-block;
+  }
+}

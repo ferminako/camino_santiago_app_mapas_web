@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar color="coorp">
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  
+  <ion-card>
+    <ion-card-content>
+      <ion-slides pager >
+        <ion-slide *ngFor="let img of localidadDatos?.imagenes" style="width:100%;">
+          <img src="{{img.src}}" style="width:100%;max-height:200px;" (click)=openImagePage(img.index)>
+        </ion-slide>
+      </ion-slides>
+      <ion-card-title>
+        <h2 class="h2_nombre_establecimiento">{{localidad.localidad}}</h2>
+      </ion-card-title>
+      <div *ngIf="localidadDatos?.texto!='' && localidadDatos?.texto!=null" class="contenidoTexto intro" [innerHTML] = "'<p>' + localidadDatos?.texto + '</p>'"></div>
+      <button ion-button  block color="coorp" [disabled]="localidadDatos?.texto=='' || localidadDatos?.texto==null" (click)="openVerMasLocalidad()"><label class="labelPadding">Ver más</label></button>    
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list padding>
+    <ion-item (click)=" openComerPage( localidad )" text-wrap>
+      Comer
+      <ion-icon name="restaurant" item-right></ion-icon>
+    </ion-item>
+    <ion-item (click)=" openDormirPage( localidad )" text-wrap>
+      Dormir
+      <ion-icon name="home" item-right></ion-icon>
+    </ion-item>
+    <ion-item (click)=" openQueVerPage( localidad )" text-wrap>
+      Qué ver
+      <ion-icon name="eye" item-right></ion-icon>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,16 @@
+{
+  "name": "caminosasntiago",
+  "app_id": "",
+  "v2": true,
+  "typescript": true,
+  "proxies": [
+    {
+      "path": "/nueva_central/api/1/",
+      "proxyUrl": "https://www.visitnavarra.info"
+    },
+    {
+      "path": "/central/apis/",
+      "proxyUrl": "https://www.reservon.es"
+    }
+  ]
+}

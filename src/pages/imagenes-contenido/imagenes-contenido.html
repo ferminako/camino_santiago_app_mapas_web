@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="coorp">
+    <ion-buttons end>
+      <button (click)="close()" ion-button icon-only>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager id="slider_contenido" zoom>
+    <ion-slide *ngFor="let img of images">
+      <img [src]="img.src">
+    </ion-slide>
+  </ion-slides>
+</ion-content>

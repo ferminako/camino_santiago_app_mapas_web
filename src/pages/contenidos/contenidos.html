@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar  color="coorp">
+    <ion-title>{{tituloSeccion}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!--<ion-list>
+    <ion-item *ngFor="let contenido of contenidos" (click)="openPageContenido(contenido)" text-wrap>
+      <ion-thumbnail item-left>
+        <img *ngIf=" contenido.image != '' " src="{{contenido.image}}">
+        <img *ngIf=" contenido.image == '' " src="assets/images/no_foto.png">
+      </ion-thumbnail>
+      <h2>{{contenido.name}}</h2>
+    </ion-item>
+  </ion-list>-->
+
+  <ion-list >
+    <button ion-item *ngFor="let contenido of contenidos" (click)="openPageContenido(contenido)" text-wrap>
+      <ion-thumbnail item-left>
+        <img *ngIf=" contenido.image != '' && contenido.image != null && contenido.image != undefined " src="{{contenido.image}}">
+        <img *ngIf=" contenido.image == '' " src="assets/images/no_foto.png">
+      </ion-thumbnail>
+      <h2>{{contenido.name | capitalize}}</h2>
+    </button>
+  </ion-list>
+
+
+</ion-content>

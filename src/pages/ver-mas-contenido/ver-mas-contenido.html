@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="coorp">
+    <ion-buttons end>
+      <button (click)="close()" ion-button icon-only>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row> 
+      <ion-col *ngIf=" contenido?.title != undefined " width-100>
+        <h2 class="h2_nombre_establecimiento">{{contenido?.title}}</h2>
+        <div *ngIf="contenido?.text!='' && contenido?.text!=null" class="contenidoTexto" [innerHTML] = "'<p>' + contenido?.text + '</p>'"></div>        
+      </ion-col>
+
+      <ion-col *ngIf=" contenido?.titulo != undefined " width-100>
+        <h2 class="h2_nombre_establecimiento">{{contenido?.titulo}}</h2>
+        <div *ngIf="contenido?.texto!='' && contenido?.texto!=null" class="contenidoTexto" [innerHTML] = "'<p>' + contenido?.texto + '</p>'"></div>        
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

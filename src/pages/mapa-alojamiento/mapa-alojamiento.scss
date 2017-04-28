@@ -1,0 +1,39 @@
+page-mapa-alojamiento {
+    #please-connect {
+    position: absolute;
+    background-color: #000;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    }
+
+    #please-connect p {
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        position: relative;
+        font-size: 1.6em;
+        top: 30%;
+    }
+
+    .scroll {
+        height: 100%;
+    }
+
+    #map {
+        width: 100%;
+        height: 100%;
+    }
+
+    a[href^="http://maps.google.com/maps"]{display:none !important}
+    a[href^="https://maps.google.com/maps"]{display:none !important}
+
+    .gmnoprint a, .gmnoprint span, .gm-style-cc {
+        display:none;
+    }
+    .gmnoprint div {
+        background:none !important;
+    }
+  
+}

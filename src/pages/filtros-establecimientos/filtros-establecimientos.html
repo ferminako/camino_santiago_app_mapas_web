@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar color="coorp">
+     <ion-buttons end>
+      <button (click)="close()" ion-button icon-only>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-list-header>
+      Busca establecimientos
+    </ion-list-header>
+    <ion-item>
+      <ion-searchbar
+        [(ngModel)]="filtroEstTexto"
+        [placeholder]="Buscar"
+      >
+      </ion-searchbar>
+     <!-- <ion-searchbar
+        [(ngModel)]="establecimientoSearch"
+        [showCancelButton]="shouldShowCancel"
+        [placeholder]="Buscar"
+        (ionInput)="onInput($event)"
+        (ionCancel)="onCancel($event)">
+      </ion-searchbar>-->
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list radio-group [(ngModel)]="filtroEstTipo">
+
+    <ion-list-header>
+      Tipo establecimiento
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Bar</ion-label>
+      <ion-radio value="1"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Restaurante / Bar Restaurante</ion-label>
+      <ion-radio value="0"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Todos</ion-label>
+      <ion-radio value="2"></ion-radio>
+    </ion-item>
+   
+  </ion-list>
+
+ <ion-list>
+    
+    <ion-list-header>
+        <ion-label> Distancia</ion-label>
+        <ion-badge item-right>{{filtroEstDistancia}} Km</ion-badge>
+    </ion-list-header>
+      
+    <ion-item>
+      <ion-range min="0" max="100" [(ngModel)]="filtroEstDistancia" color="coorp">
+        <ion-label range-left>0</ion-label>
+        <ion-label range-right>100</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-list> 
+  <button ion-button color="coorp" block (click)="filtrar()">Filtrar</button><br>
+  <button ion-button color="danger" block (click)="limpiarFiltros()">Limpiar</button>
+
+</ion-content>

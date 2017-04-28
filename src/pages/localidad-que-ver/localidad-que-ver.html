@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="coorp">
+   
+    <ion-title>{{localidad.localidad}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+   <ion-list>
+
+    <ion-item *ngFor="let pit of pits" (click)="openPagePit(pit)" text-wrap>
+      <ion-thumbnail item-left>
+        <img *ngIf=" pit.imagenes.length > 0 " src="{{pit.imagenes[0]}}">
+        <img *ngIf=" pit.imagenes == undefined || pit.imagenes.length == 0 " src="assets/images/no_foto.png">
+      </ion-thumbnail>
+      <h2>{{pit.nombre}}</h2>
+   
+    </ion-item>
+
+    <ion-item *ngIf="noResults">
+      <ion-label>
+        No hay resultados.
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+ 
+
+</ion-content>

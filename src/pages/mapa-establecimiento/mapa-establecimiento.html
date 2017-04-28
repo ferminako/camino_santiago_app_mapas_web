@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="coorp">
+     <ion-buttons end>
+      <button (click)="close()" ion-button icon-only>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>{{establecimiento.nombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+    <div #pleaseConnect id="please-connect">
+        <!--<p>Please connect to the Internet...</p>-->
+    </div>
+    <div #map id="map"></div>
+</ion-content>

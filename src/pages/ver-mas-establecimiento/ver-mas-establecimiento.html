@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="coorp">
+    <ion-buttons end>
+      <button (click)="close()" ion-button icon-only>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row> 
+      <ion-col width-100>
+        <h2 class="h2_nombre_establecimiento">{{establecimiento.nombre}}</h2>
+        <div *ngIf="establecimiento.descripcion!=''" class="contenidoTexto" [innerHTML] = "'<p>' + establecimiento.descripcion + '</p>'"></div>
+        <div *ngIf="establecimiento.carta!=''" class="contenidoTexto" [innerHTML] = "'<p>' + establecimiento.carta + '</p>'"></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/fermin/lampstack-5.5.34-0/apache2/htdocs/apps_ionic2/caminosantiago_mapaweb/platforms/android/CordovaLib/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/home/fermin/lampstack-5.5.34-0/apache2/htdocs/apps_ionic2/caminosantiago_mapaweb/platforms/android/CordovaLib/src/debug/jniLibs"/></dataSet></merger>

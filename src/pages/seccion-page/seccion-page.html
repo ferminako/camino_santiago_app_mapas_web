@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar color="coorp">
+    <ion-title>{{tituloSeccion}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+   <ion-list >
+    <button ion-item *ngFor="let contenido of contenidos" (click)="openPageContenido(contenido)" text-wrap>
+      <ion-thumbnail item-left>
+        <img src="{{contenido.image}}">
+      </ion-thumbnail>
+      <h2>{{contenido.name}}</h2>
+    </button>
+  </ion-list>
+</ion-content>
