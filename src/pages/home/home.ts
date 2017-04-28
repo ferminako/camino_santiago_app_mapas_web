@@ -50,6 +50,10 @@ export class HomePage {
     this.navCtrl.push( LocalidadesListadoPage, {"comerDormir":"comer"} );
   }
 
+  openPageRuta(){
+    this.navCtrl.push( LocalidadesListadoPage, {"comerDormir":"ruta"} );
+  }
+
   openPageDormir(){
     this.navCtrl.push( LocalidadesListadoPage, {"comerDormir":"dormir"} );
   }

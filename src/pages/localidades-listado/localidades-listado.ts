@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { LocalidadesService } from '../../providers/localidades';
 import { TabsLocalidadPage } from '../tabs-localidad/tabs-localidad';
-/*import { LocalidadPage } from '../localidad/localidad';*/
+import { LocalidadGeneralPage } from '../localidad-general/localidad-general';
 
 @Component({
   selector: 'page-localidades-listado',
@@ -30,8 +30,13 @@ export class LocalidadesListadoPage {
   }
 
   openPageLocalidad(localidad:any){
-/*    console.log(localidad);*/
-    this.navCtrl.push( TabsLocalidadPage, { "localidad":localidad,"comerDormir":this.comerDormir } );
+
+    if(this.comerDormir =="comer" || this.comerDormir=="dormir" ){
+       this.navCtrl.push( TabsLocalidadPage, { "localidad":localidad,"comerDormir":this.comerDormir } );
+    }else if( this.comerDormir == "ruta"){
+      this.navCtrl.push( LocalidadGeneralPage, { "localidad":localidad } );
+    }
+   
   }
 
   getComerDormirString():string{
@@ -39,6 +44,8 @@ export class LocalidadesListadoPage {
       return "Comer";
     }else if ( this.comerDormir == "dormir" ){
       return "Dormir";
+    } else if ( this.comerDormir == "ruta" ){
+      return "Ruta";
     }
   }
 
